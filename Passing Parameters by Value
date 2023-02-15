@@ -1,0 +1,34 @@
+#IF THE ARGUMENT IS A VARIABLE RATHER THAN A LITERAL VALUE, THE VALUE OF THE VARIABLE IS PASSED TO THE PARAMETERS. 
+#THE VARIABLE IS NOT AFFECTED, REGARDLES OF THE CHANGES MADE TO THE PARAMETER INSIDE THE METHOD.
+#THAT IS WHY AFTER INVOKING THE METHOD, THE VALUE OF num1 AND num2 DID NOT CHANGED.
+
+
+public class MyClass {
+    public static void main(String args[]) {
+        int num1 = 1;
+        int num2 = 2;
+        
+        System.out.println("Before invoking the method:" + num1 + "and" + num2);
+        
+        swap(num1,num2);
+        
+        System.out.println("After invoking the method:" + num1 + "and" + num2);
+    }
+    
+    public static void swap(int n1, int n2) {
+        System.out.println("Before Swaping:" + n1 + "and" + n2);
+        
+        int temp = n1;
+        n1 = n2;
+        n2 = temp;
+        
+        System.out.println("After Swaping:" + n1 + "and" + n2);
+    }
+}
+
+
+OUTPUT:
+Before invoking the method:1 and 2
+Before Swaping:1 and 2
+After Swaping:2 and 1
+After invoking the method:1 and 2
